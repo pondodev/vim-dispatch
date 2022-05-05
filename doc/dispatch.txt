@@ -65,6 +65,18 @@ COMMANDS                                        *dispatch-commands*
 
                         -compiler=... force use of a compiler plugin
                         -dir=...      run command in given directory
+                        
+                        You can also pipe the output of commands run with
+                        |:Dispatch| (and also anything else that uses it under
+                        the hood) by setting |g:dispatch_pipe|. Do note
+                        however that unlike setting |shellpipe|, you shouldn't
+                        need to ever write to a file since |:Dispatch| will do
+                        that already.
+
+                        If |g:dispatch_pipe| is broken then that is my
+                        (pondodev) fault because I literally learned vimscript
+                        in like, a couple hours to try and add this feature
+                        and as soon as it worked I left it.
 
 :Dispatch[!] [options] -- [arguments]
                         This is equivalent to |:Make| but accepts options.
