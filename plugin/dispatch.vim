@@ -97,6 +97,10 @@ if !exists('g:dispatch_handlers')
         \ ]
 endif
 
+if !exists('g:dispatch_pipe')
+    let g:dispatch_pipe = ""
+endif
+
 augroup dispatch
   autocmd!
   autocmd QuickfixCmdPre,QuickfixCmdPost * "

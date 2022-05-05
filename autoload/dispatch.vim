@@ -910,6 +910,8 @@ function! dispatch#compile_command(bang, args, count, mods, ...) abort
     endif
   endfor
 
+  let request.command = request.command . " " . g:dispatch_pipe
+
   if empty(request.compiler)
     unlet request.compiler
   endif
