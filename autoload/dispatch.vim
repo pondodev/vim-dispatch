@@ -910,7 +910,9 @@ function! dispatch#compile_command(bang, args, count, mods, ...) abort
     endif
   endfor
 
-  let request.command = request.command . " " . g:dispatch_pipe
+  " TODO: make this compatible with other shells. currently only works for zsh
+  " as far as i know
+  let request.command = request.command . " " . g:dispatch_pipe . "; exit ${pipestatus[1]}"
 
   if empty(request.compiler)
     unlet request.compiler
